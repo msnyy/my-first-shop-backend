@@ -3,6 +3,7 @@ package com.example.demo.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import lombok.Data;
 
 @Data
@@ -14,5 +15,7 @@ public class Product {
     String productName;
     int price;
     String detail;
-    private String image;
+
+    byte[] image;
 }
+
