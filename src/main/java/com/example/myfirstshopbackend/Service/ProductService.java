@@ -19,7 +19,8 @@ public class ProductService {
     }
 
     public void createProduct(ProductCreateReq product){
-        byte[] imageBytes = Base64.getDecoder().decode(product.getImage());
+        String base64Image = product.getImage().replaceAll("data:image/png;base64,", "");
+        byte[] imageBytes = Base64.getDecoder().decode(base64Image);
 
         Product newProduct = new Product();
         newProduct.setProductName(product.getProductName());

@@ -28,8 +28,11 @@ public class ProductController {
     @PostMapping("/product")
     @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity createProduct(@RequestBody ProductCreateReq productDTO) {
-
+        System.out.print("Investigate: ");
+//
+        System.out.print(productDTO);
         productService.createProduct(productDTO);
+
 
         return ResponseEntity.ok(HttpStatus.OK);
     }
